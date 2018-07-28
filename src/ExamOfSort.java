@@ -1,6 +1,16 @@
+import java.util.ArrayList;
+
 public class ExamOfSort {
     public static void main(String[] args){
-
+        Integer[] test;
+        ArrayList<Integer> al=new ArrayList<>();
+        for (int i=0;i<10000;++i){
+            al.add((int) (Math.random()*100000));
+        }
+        test=al.toArray(new Integer[al.size()]);
+        OptimizedInsertion.sort(test);
+        System.out.println(isSorted(test));
+        show(test);
     }
 
     public static void sort(Comparable[] a){
