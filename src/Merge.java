@@ -1,6 +1,6 @@
 public class Merge extends ExamOfSort {
     private static Comparable[] aux;//归并所需要的辅助数组
-    public static void sort(Comparable[] a){
+    public static void sort(Comparable[] a){//自顶向下归并排序
         aux=new Comparable[a.length];
         sort(a,0,a.length-1);
     }
@@ -11,6 +11,16 @@ public class Merge extends ExamOfSort {
         sort(a,lo,mid);
         sort(a,mid+1,hi);
         merge(a,lo,mid,hi);
+    }
+
+    public static void sortBU(Comparable[] a){//自底向上归并排序
+        int N=a.length;
+        aux=new Comparable[N];
+        for (int sz=1;sz<N;sz*=2){
+            for (int lo=0;lo<N-sz;lo+=sz*2){
+                merge(a,lo,lo+sz-1,Math.min(lo+sz*2-1,N-1));
+            }
+        }
     }
     public static void merge(Comparable[] a,int lo,int mid,int hi){//作用是利用辅助数组，把两个有序数组 原地 合并成一个有序数组
         int i=lo,j=mid+1;
