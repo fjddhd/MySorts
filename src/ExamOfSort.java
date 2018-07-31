@@ -8,7 +8,7 @@ public class ExamOfSort {
             al.add((int) (Math.random()*100000));
         }
         test=al.toArray(new Integer[al.size()]);
-        Merge.sortBU(test);
+        Quick.sort(test);
         System.out.println(isSorted(test));
         show(test);
     }
