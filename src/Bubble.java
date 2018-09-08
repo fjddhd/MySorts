@@ -4,7 +4,7 @@ public class Bubble extends ExamOfSort{
         for (int i=0;i<N-1;++i){//注意：最多N-1轮，由于每次冒泡从后往前，都会确定一个最小值
             boolean flag=false;
             for (int j=N-1;j>i;--j){
-                if (less(a[j],a[j-1])){//出现逆序就交换，只要内循环交换过flag就为true
+                if (less(a[j],a[j-1])){//出现逆序就交换，只要内循环交换过，flag就设置为true
                     exch(a,j,j-1);
                     flag=true;
                 }

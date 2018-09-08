@@ -24,13 +24,13 @@ public class Quick extends ExamOfSort {
                 if (i==hi)
                     break;
             while (less(v,a[--j]))
-                if (j==lo)
+                if (j==lo)//这个边界条件是冗余的
                     break;
             if (i>=j)
                 break;
             exch(a,i,j);
         }
-        exch(a,lo,j);
-        return j;
+        exch(a,lo,j);//轴与j位置元素交换
+        return j;//返回轴所在位置
     }
 }

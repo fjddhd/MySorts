@@ -23,7 +23,7 @@ public class Merge extends ExamOfSort {
         }
     }
     public static void merge(Comparable[] a,int lo,int mid,int hi){//作用是利用辅助数组，把两个有序数组 原地 合并成一个有序数组
-        int i=lo,j=mid+1;
+        int i=lo,j=mid+1;//相当于两个指针，一个是传进来的数组首尾，一个是中间位置+1
         for (int k=lo;k<=hi;++k){
             aux[k]=a[k];
         }
