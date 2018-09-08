@@ -1,14 +1,22 @@
 import java.util.ArrayList;
+import java.util.Timer;
 
 public class ExamOfSort {
+
     public static void main(String[] args){
+        long start,end;
         Integer[] test;
         ArrayList<Integer> al=new ArrayList<>();
-        for (int i=0;i<10000;++i){
-            al.add((int) (Math.random()*100000));
+        for (int i=0;i<100000;++i){
+            al.add((int) (Math.random()*1000000));
         }
         test=al.toArray(new Integer[al.size()]);
-        Shell.sort(test);
+        start = System.currentTimeMillis();
+
+        Quick.sort(test);
+
+        end = System.currentTimeMillis();
+        System.out.println(end-start);
         System.out.println(isSorted(test));
         show(test);
     }

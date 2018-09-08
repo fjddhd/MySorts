@@ -1,11 +1,11 @@
-public class Heap extends  ExamOfSort {
+public class Heap extends  ExamOfSort {//暂不可用
     //此处用了与优先队列不同的sink
     private static void sink(Comparable[] a,int k,int N){//下沉（自上而下调整），每N次下沉只需少于2N次比较和少于N次交换
         while(2*k<=N){
             int j=2*k;
             if (j<N && less(a[j],a[j+1]))//为了把更大的那个子节点换上去
                 j++;
-            if (!less(a[k],a[j]))
+            if (!less(k,j))
                 break;
             exch(a,j,k);
             k=j;
