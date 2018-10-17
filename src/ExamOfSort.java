@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.Timer;
+import java.util.Arrays;
 
 public class ExamOfSort {
 
@@ -7,18 +7,19 @@ public class ExamOfSort {
         long start,end;
         Integer[] test;
         ArrayList<Integer> al=new ArrayList<>();
-        for (int i=0;i<100000;++i){
-            al.add((int) (Math.random()*1000000));
+        al.add(0);//堆排序专用：不使用下标为0的元素
+        for (int i=0;i<1000001;++i){
+            al.add((int) (Math.random()*100000000));
         }
         test=al.toArray(new Integer[al.size()]);
         start = System.currentTimeMillis();
 
-        Quick.sort(test);
+        Heap.sort(test);
 
         end = System.currentTimeMillis();
         System.out.println(end-start);
         System.out.println(isSorted(test));
-        show(test);
+        //show(test);
     }
 
     public static void sort(Comparable[] a){

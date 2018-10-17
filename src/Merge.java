@@ -7,7 +7,7 @@ public class Merge extends ExamOfSort {
     //重写版sort
     public static void sort(Comparable[] a,int lo,int hi){
         if (hi<=lo) return;//递归跳出条件
-        int mid=lo+(lo+hi)/2;
+        int mid=lo+(hi-lo)/2;
         sort(a,lo,mid);
         sort(a,mid+1,hi);
         merge(a,lo,mid,hi);
