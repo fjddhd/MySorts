@@ -31,6 +31,12 @@ public class Quick extends ExamOfSort {
             exch(a,i,j);
         }
         exch(a,lo,j);//轴与j位置元素交换
+
+        for (int k=lo;k<=hi;++k) {//测试每趟的结果，大数组输入最好注释掉
+            System.out.print(a[k]+" ");
+        }
+        System.out.println("");
+
         return j;//返回轴所在位置
     }
 }
