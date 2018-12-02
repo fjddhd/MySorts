@@ -1,7 +1,7 @@
 public class Heap extends  ExamOfSort {//注意：数组下标0不使用
 
     /**
-     * 大顶堆，输出非递减序列
+     * 大顶堆，输出非递减序列，无重复则递增
      * */
     //此处用了与优先队列不同的sink
     private static void sink(Comparable[] a,int k,int N){//下沉（自上而下调整），每N次下沉只需少于2N次比较和少于N次交换
@@ -31,13 +31,13 @@ public class Heap extends  ExamOfSort {//注意：数组下标0不使用
 
         //此时堆有序（每个节点大于等于其子节点，子节点间未必有序）
         while (N>1){//修复堆，把堆底元素换到堆顶一依次下沉
-            exch(a,1,N--);//每次sinkl保证栈顶在剩余序列中最大，所以把它换到合适的位置
+            exch(a,1,N--);//每次sink保证栈顶在剩余序列中最大，所以把它换到合适的位置
             sink(a,1,N);
         }
     }
 
     /**
-     * 小顶堆，输出非递增序列
+     * 小顶堆，输出非递增序列，无重复则递减
      * */
     private static void sinkl(Comparable[] a,int k,int N){//下沉（自上而下调整），每N次下沉只需少于2N次比较和少于N次交换
         while(2*k<=N){

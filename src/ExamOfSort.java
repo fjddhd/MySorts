@@ -21,8 +21,8 @@ public class ExamOfSort {
 //        System.out.println(isSorted(test));
         //show(test);
 
-//        showQuickEveryTerm();//快排每轮结果
-        showHeap();//构造堆结果
+        showQuickEveryTerm();//快排每轮结果
+//        showHeap();//构造堆结果
     }
 
     public static void sort(Comparable[] a){
@@ -54,7 +54,7 @@ public class ExamOfSort {
      * 测试快排单趟结果
      * */
     public static void showQuickEveryTerm(){
-        Integer[] a={50,9,51,6,91,17,89,27,65,43};
+        Integer[] a={49,38,65,97,76,13,27,56};
         Quick.sort(a);
         System.out.println(isSorted(a));
     }
